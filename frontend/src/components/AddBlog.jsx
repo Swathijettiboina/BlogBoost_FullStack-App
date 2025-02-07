@@ -1,41 +1,76 @@
-import React from 'react'
-import { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronLeft } from 'lucide-react';
+import axios from 'axios';  // Import axios
 
 function AddBlog() {
+    const [blog, setBlog] = useState({
+        title: '',
+        author: '',
+        description: '',
+        content: '',
+        imageurl: '',
+        publishDate: new Date().toISOString(), // Automatically set the publish date
+    });
 
-    const addBlog=()=>{
+    const handleChange = (e) => {
+        setBlog({ ...blog, [e.target.id]: e.target.value });
+    };
+
+    const addBlog = async () => {
+        console.log("Add Blog Button Clicked!"); // Debugging log
         
-    }
-  return (
-    <>
-        <div className="flex flex-col justify-center items-center max-w-sm mx-auto"> 
-            {/* <h1>Add new Blog</h1> */}
-            <div className="form-group max-w-md mx-auto my-10 p-8 bg-white border rounded-lg shadow-xl">
-                    <div className='mb-4 mt-4 '>  
-                        <label for="title" className="block justify-center font-bold text-xl mb-2">Title</label>
-                        <input type="text" className="form-control" id="title" placeholder="Enter title" />
-                    </div>
+        try {
+            await axios.post("http://localhost:5000/blogs/", blog); // Adjust API URL if needed
+            alert("Blog added successfully!");
+        } catch (error) {
+            console.error("Error adding blog:", error);
+            alert("Failed to add blog");
+        }
+    };
+
+    return (
+        <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+            <Link to='/' className="absolute top-4 left-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
+                <div className="flex">
+                    <ChevronLeft /> <span>Back</span>
+                </div>
+            </Link>
+
+            <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
+                <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">Add New Blog</h2>
+
+                <div className="space-y-4">
                     <div>
-                        <label for="description" className="block justify-center font-bold text-xl mb-2">Description</label>
-                        <textarea className="form-control" id="description" ></textarea>    
+                        <label htmlFor="title" className="block text-lg font-medium text-gray-700">Title</label>
+                        <input type="text" id="title" value={blog.title} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter title" />
                     </div>
+
                     <div>
-                        <label for="image" className="block justify-center font-bold text-xl mb-2">Image</label>
-                        <input type="text" className="form-control" id="image" />
+                        <label htmlFor="author" className="block text-lg font-medium text-gray-700">Author</label>
+                        <input type="text" id="author" value={blog.author} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter author name" />
                     </div>
+
                     <div>
-                        <label for="category" className="block justify-center font-bold text-xl mb-2">Content</label>
-                        <input type="text" className="form-control" id="category" rows="5" placeholder="Enter category" />
+                        <label htmlFor="description" className="block text-lg font-medium text-gray-700">Description</label>
+                        <textarea id="description" value={blog.description} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter description"></textarea>
                     </div>
+
                     <div>
-                        <button type="button" onClick={()=>{AddBlog()}} className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Submit</button>
+                        <label htmlFor="imageurl" className="block text-lg font-medium text-gray-700">Image URL</label>
+                        <input type="text" id="imageurl" value={blog.imageurl} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter image URL" />
                     </div>
+
+                    <div>
+                        <label htmlFor="content" className="block text-lg font-medium text-gray-700">Content</label>
+                        <textarea id="content" value={blog.content} onChange={handleChange} className="w-full p-3 h-40 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter content"></textarea>
+                    </div>
+
+                    <button onClick={()=>{addBlog()}} className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Submit</button>
+                </div>
             </div>
         </div>
-
-    </>
-  )
+    );
 }
 
-export default AddBlog
+export default AddBlog;

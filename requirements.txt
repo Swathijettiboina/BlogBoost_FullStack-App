@@ -1,0 +1,2 @@
+Frontend :tailwind css , node modules , lucide react for small icons ,react-router-dom , axios -to connect to the backend
+Backend : express, dotenv, cors, mongoose , node modules(npm init) ,

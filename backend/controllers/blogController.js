@@ -1,4 +1,4 @@
-import blogModel from '../models/blog.js';
+const blogModel =require('../models/blog.js');
 // Create a new blog
 const creatBlog=async(req,res)=>{
     try{
@@ -54,4 +54,4 @@ const deleteBlog=async(req,res)=>{
     }
 }
 
-export { creatBlog, getAllBlogs, getBlogById, updateBlog, deleteBlog };
+module.exports= { creatBlog, getAllBlogs, getBlogById, updateBlog, deleteBlog };

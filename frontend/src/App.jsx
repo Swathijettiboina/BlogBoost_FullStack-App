@@ -1,15 +1,21 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes,Route } from 'react-router-dom'
+import Home from './components/Home'
 import AddBlog from './components/AddBlog'
-
-
+import About from './pages/About'
+import Profile from './pages/Profile'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <h1>Welcome to the FS project</h1>
-    <AddBlog/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/addblog" element={<AddBlog/>} />
+          <Route path="/about" element={<About/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
