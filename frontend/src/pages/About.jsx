@@ -1,16 +1,13 @@
 import { ChevronLeft } from 'lucide-react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const About = () => {
+    const navigate = useNavigate(); // Add this line
 
     return (
         <div className="relative min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://st2.depositphotos.com/1420973/6409/i/450/depositphotos_64095317-stock-photo-blog-concept-cloud-chart-print.jpg")' }}>
-            <Link to='/' className="absolute top-4 left-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
-                <div className="flex">
-                    <ChevronLeft /> <span>Back</span>
-                </div>
-            </Link>
+           
             <div className="absolute inset-0 bg-black opacity-40"></div>
 
             {/* Page Content */}
@@ -18,7 +15,7 @@ const About = () => {
                 {/* Hero Section */}
                 <section className="py-16 text-center">
                     <div className="container mx-auto">
-                        <h1 className="text-4xl font-bold mb-4 text-white">About Our Blog</h1>
+                        <h1 className="text-4xl font-bold mb-4 text-white">About Our Blog Boost</h1>
                         <p className="text-lg text-gray-200">A place to share stories, ideas, and information with the world.</p>
                     </div>
                 </section>
@@ -27,7 +24,7 @@ const About = () => {
                 <section className="py-16 text-center">
                     <div className="container mx-auto">
                         <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
-                        <p className="text-lg text-white text-gray-700 max-w-4xl mx-auto">Our blog is dedicated to providing insightful content across various topics. We aim to engage readers with valuable, well-researched, and relatable articles on technology, lifestyle, health, and more. Whether you're looking for industry trends, personal stories, or expert tips, we have something for everyone.</p>
+                        <p className="text-lg text-gray-700 max-w-4xl mx-auto">Our blog is dedicated to providing insightful content across various topics. We aim to engage readers with valuable, well-researched, and relatable articles on technology, lifestyle, health, and more. Whether you're looking for industry trends, personal stories, or expert tips, we have something for everyone.</p>
                     </div>
                 </section>
 
@@ -50,7 +47,7 @@ const About = () => {
                     <div className="container mx-auto">
                         <h2 className="text-3xl font-semibold mb-6">Join Our Community</h2>
                         <p className="text-lg text-gray-700 mb-6">Are you a writer? Do you have a story or idea to share with the world? We welcome guest contributors to submit their posts and become part of our growing blog community.</p>
-                        <button className="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600 transition">Submit Your Post</button>
+                        <Link to="/addblog" className="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600 transition">Submit Your Post</Link>
                     </div>
                 </section>
             </div>

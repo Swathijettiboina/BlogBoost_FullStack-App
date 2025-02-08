@@ -1,24 +1,46 @@
+import { Heart, Eye, ArrowLeft, ArrowRight } from "lucide-react";
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const BlogCard = ({ Id, blog }) => {
+  const navigate = useNavigate(); // Hook to navigate back
+
   return (
-    <div key={Id} className="flex flex-col md:flex-row bg-white shadow-md rounded-2xl overflow-hidden m-3 hover:shadow-xl transition-shadow duration-300">
+    <div className="relative bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition-transform duration-400 hover:scale-105">
       {/* Blog Image */}
-      <div className="md:w-1/3">
-        <img src={blog.Image} alt="blog image" className="w-full h-48 md:h-full object-cover rounded-t-2xl md:rounded-l-2xl" />
-      </div>
+      <img
+        src={blog.imageurl}
+        alt="Blog Thumbnail"
+        className="w-full h-52 object-cover rounded-t-2xl"
+      />
 
       {/* Blog Content */}
-      <div className="p-6 flex flex-col justify-between md:w-2/3">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">{blog.Title}</h2>
-          <p className="text-gray-600 mb-4">{blog.Description}</p>
+      <div className="p-5 flex flex-col justify-between">
+        <h2 className="text-xl font-bold text-gray-800 mb-2">{blog.title}</h2>
+        <p className="text-gray-600 line-clamp-2">{blog.description}</p>
+
+        {/* Author & Meta Info */}
+        <div className="mt-4 flex items-center justify-between text-gray-500 text-sm">
+          <p className="font-semibold">By {blog.author || "Unknown"}</p>
+          <p>{new Date(blog.publishDate).toLocaleDateString() || "N/A"}</p>
         </div>
 
-        {/* Author & Date */}
-        <div className="flex justify-between items-center text-gray-500 text-sm">
-          <p className="font-semibold">By {blog.Author || "Unknown"}</p>
-          <p>{blog.PublishedDate || "Not Available"}</p>
+        {/* Views & Likes */}
+        <div className="flex items-center justify-between mt-3 text-gray-600">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1">
+              <Eye /> {blog.views || 0}
+            </span>
+            <button className="flex items-center space-x-1">
+              <Heart fill="red" className="text-red-500 fill-red-500" />
+              <span>{blog.likeCount || 0} Likes</span>
+            </button>
+          </div>
+
+          {/* Read More Button */}
+          <Link to={`/blogs/read-blog/${Id}`} className="text-blue-600 flex font-semibold hover:underline">
+            Read More
+          </Link>          
         </div>
       </div>
     </div>

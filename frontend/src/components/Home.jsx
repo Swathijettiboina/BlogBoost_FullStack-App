@@ -1,20 +1,22 @@
 import React from "react";
 import Header from "./Header";
-// import Blogs from "./Blogs";
 import Footer from "./Footer";
-import BlogsList from "./BlogsList";
+import HeroSection from "../pages/HeroSection";
+import FeaturedBlogs from "../pages/FeaturedBlogs";
+import RecentBlogs from "../pages/RecentBlogs";
+
 const Home = () => {
   return (
-    <>
+    <div className="bg-gradient-to-b from-blue-200 via-gray-300 to-purple-300 min-h-screen text-gray-900">
       <Header />
-      
-      <div className="grid grid-rows-1">
-        <BlogsList />
+      <HeroSection />
+      <div className="container mx-auto px-6 lg:px-12 py-10 space-y-12">
+        <FeaturedBlogs />
+        <RecentBlogs />
       </div>
-      <div className="p-1 h-auto fixed bottom-0 bg-gray-200  w-full dark:bg-gray-800">
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 };
+
 export default Home;

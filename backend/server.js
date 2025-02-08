@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const mongoose=require("mongoose");
 dotenv.config();
 const app = express();
 
@@ -13,7 +14,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.use("/blogs", router);
+app.use("/", router);
 
 app.get('/', (req, res) => {
     res.send("Welcome to Blog API");
