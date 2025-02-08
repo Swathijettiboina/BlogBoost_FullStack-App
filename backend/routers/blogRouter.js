@@ -1,5 +1,6 @@
 const express = require('express');
 const blogController = require('../controllers/blogController.js');
+const { getComments, postComment, likeComment, deleteComment } = require('../controllers/commentController.js');
 
 const router = express.Router();
 
@@ -30,5 +31,18 @@ router.put('/blogs/:id/increase-views', blogController.increaseViews);
 
 // Like a blog
 router.put('/blogs/:id/like', blogController.likeBlog);
+
+
+// Get all comments for a blog
+router.get('/blogs/:blogId/comments', getComments);
+
+// Post a new comment for a blog
+router.post('/blogs/:blogId/comments', postComment);
+
+// Like a comment for a blog
+router.put('/blogs/:blogId/comments/:commentId/like', likeComment);
+
+// Delete a comment for a blog
+router.delete('/blogs/:blogId/comments/:commentId', deleteComment);
 
 module.exports = router;

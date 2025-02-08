@@ -21,7 +21,7 @@ const HeroSection = () => {
         {/* Trending Categories */}
         <section className="py-10 px-6">
           <h2 className="text-3xl text-black font-semibold text-center mb-6 ">
-            🔥 Trending Categories
+             Trending Categories
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (

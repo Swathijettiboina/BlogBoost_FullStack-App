@@ -14,7 +14,8 @@ const blogSchema = new mongoose.Schema({
     comments: [{ 
         user: String, 
         comment: String, 
-        date: { type: Date, default: Date.now } 
+        date: { type: Date, default: Date.now } ,
+        likes:{type:Number,default:0}
     }] 
 });
 
