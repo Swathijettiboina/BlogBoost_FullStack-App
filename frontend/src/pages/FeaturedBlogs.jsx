@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { ChevronLeft } from "lucide-react"; // ✅ Import Fixed
 import BlogCard from "../components/BlogCard";
 
 const FeaturedBlogs = () => {
