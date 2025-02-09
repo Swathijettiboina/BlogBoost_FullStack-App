@@ -13,7 +13,7 @@ Blog Application is a dynamic and interactive blogging platform where users can 
 - **Fast Performance**: Built with Vite for a quick development experience.
 
 ## Technologies Used
-- **Frontend**: React, Vite, Tailwind CSS
+- **Frontend**: React, Tailwind CSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **State Management**: React hooks
@@ -69,56 +69,6 @@ Follow these steps to set up the project:
 - **Update**: Edit existing blog posts.
 - **Delete**: Remove unwanted blog posts.
 
-## Folder Structure for backend 
-
-├── config
-│   ├── db.js
-├── controllers
-│   ├── blogController.js
-│   ├── commentController.js
-├── models
-│   ├── blog.js
-├── routers
-│   ├── blogRouter.js
-├── .env
-├── package-lock.json
-├── package.json
-├── server.js
-## Folder Structure for frontend 
-
-├── public
-├── src
-│   ├── assets
-│   │   ├── logo-blog-boost.webp
-│   ├── components
-│   │   ├── AddBlog.jsx
-│   │   ├── BlogCard.jsx
-│   │   ├── BlogsList.jsx
-│   │   ├── CommentSection.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── Home.jsx
-│   │   ├── ReadFullBlog.jsx
-│   ├── pages
-│   │   ├── About.jsx
-│   │   ├── CategoryBlogs.jsx
-│   │   ├── EditBlog.jsx
-│   │   ├── FeaturedBlogs.jsx
-│   │   ├── HeroSection.jsx
-│   │   ├── Profile.jsx
-│   │   ├── RecentBlogs.jsx
-│   ├── App.jsx
-│   ├── index.css
-│   ├── main.jsx
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── output.txt
-├── package-lock.json
-├── package.json
-├── README.md
-├── vite.config.js
-
 ## Contribution
 Contributions are welcome! To contribute:
 1. Fork the repository.
@@ -127,3 +77,4 @@ Contributions are welcome! To contribute:
 4. Commit your changes (`git commit -am 'Add new feature'`).
 5. Push to the branch (`git push origin feature/your-feature`).
 6. Create a pull request.
+
