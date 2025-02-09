@@ -18,18 +18,24 @@ const FeaturedBlogs = () => {
     fetchFeaturedBlogs();
   }, []);
 
-  return (
-    
-    <section className="py-10 px-6">
-      
+  // Duplicate blogs for seamless infinite scrolling
+  const scrollingBlogs = [...featuredBlogs, ...featuredBlogs];
 
-      <h2 className="text-3xl font-semibold text-center mb-6">🌟 Featured Blogs</h2>
+  return (
+    <section className="py-10 px-6 overflow-hidden">
+      <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text tracking-wide">
+        Great minds read alike! Here are the top 5 must-read blogs.
+      </h2>
 
       {featuredBlogs.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-          {featuredBlogs.map((blog) => (
-            <BlogCard key={blog._id} Id={blog._id} blog={blog} />
-          ))}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex space-x-4 animate-scroll-continuous">
+            {scrollingBlogs.map((blog, index) => (
+              <div key={index} className="w-[250px] flex-shrink-0">
+                <BlogCard Id={blog._id} blog={blog} />
+              </div>
+            ))}
+          </div>
         </div>
       ) : (
         <p className="text-center text-gray-500">No blogs available.</p>

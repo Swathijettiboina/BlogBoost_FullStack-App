@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@keyframes scroll-continuous {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll-continuous {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    animation: scroll-continuous 30s linear infinite;
+  }
+  
+  
+  

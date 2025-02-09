@@ -7,13 +7,27 @@ import RecentBlogs from "../pages/RecentBlogs";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-b from-blue-200 via-gray-300 to-purple-300 min-h-screen text-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-gray-100 to-purple-100 text-gray-900">
       <Header />
       <HeroSection />
-      <div className="container mx-auto px-6 lg:px-12 py-10 space-y-12">
-        <FeaturedBlogs />
-        <RecentBlogs />
-      </div>
+
+      <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-16 px-6 rounded-lg shadow-lg space-y-16">
+      <div>
+    <div className="mt-10">
+      <FeaturedBlogs />
+    </div>
+  </div>
+ 
+  <div>
+    <div className="mt-10">
+      <RecentBlogs />
+    </div>
+  </div>
+
+  
+</section>
+
+
       <Footer />
     </div>
   );
