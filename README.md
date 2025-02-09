@@ -1,4 +1,4 @@
-# Blog Application
+# BlogBoost Application
 
 Blog Application is a dynamic and interactive blogging platform where users can create, read, update, and delete blog posts. It provides an engaging experience with real-time updates for likes and comments.
 
@@ -26,7 +26,7 @@ Follow these steps to set up the project:
 ### Backend Setup
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/blog-app.git
+    git clone https://github.com/Swathijettiboina/BlogBoost_FullStack-App.git
     ```
 2. Navigate to the backend directory:
     ```bash
@@ -127,6 +127,3 @@ Contributions are welcome! To contribute:
 4. Commit your changes (`git commit -am 'Add new feature'`).
 5. Push to the branch (`git push origin feature/your-feature`).
 6. Create a pull request.
-
-## License
-This project is licensed under the **MIT License**.
