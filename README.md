@@ -43,7 +43,7 @@ Follow these steps to set up the project:
     ```
 5. Start the backend server:
     ```bash
-    npm run dev
+    npx nodemon server.js
     ```
 
 ### Frontend Setup
