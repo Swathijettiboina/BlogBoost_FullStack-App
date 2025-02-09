@@ -16,8 +16,11 @@ const EditBlog = () => {
         tags: '',
     });
 
-    const categories = ['Technology', 'Health', 'Lifestyle', 'Education', 'Business'];
-
+    const categories = [
+        "Technology", "Health", "Finance", "Education",  
+        "Lifestyle", "Entertainment", "Business", "Science",  
+        "Travel", "Food"
+    ]; 
     useEffect(() => {
         const fetchBlog = async () => {
             try {

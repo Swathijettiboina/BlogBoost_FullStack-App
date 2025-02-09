@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className=" bg-opacity-50 min-h-screen">
 
         {/* Trending Categories */}
-        <section className="py-16 px-8">
+        <section className="py-8 px-8 ">
           <h2 className="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 bg-clip-text text-transparent relative z-10">
             Trending Categories: Explore New Worlds, No Passport Required!!!
           </h2>
@@ -40,7 +40,7 @@ const HeroSection = () => {
         </section>
         {/* Hero Section */}
         <section className="flex items-center justify-center text-center h-[500px] px-6">
-          <div className="bg-gray-300 bg-opacity-60 p-10 rounded-xl shadow-lg max-w-2xl mx-auto">
+          <div className="bg-gray-400 bg-opacity-60 p-10 rounded-2xl shadow-lg max-w-3xl mx-auto">
             <h1 className="text-5xl font-extrabold text-gray-900 leading-snug">
               "Blogging is not just writing, it's sharing your voice with the world."
             </h1>
