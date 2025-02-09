@@ -3,14 +3,14 @@ const Blog = require('../models/blog'); // Import the blog model
 // Get all comments for a specific blog
 const getComments = async (req, res) => {
     try {
-        const { blogId } = req.params; // Get blogId from URL params
+        const { blogId } = req.params; 
         const blog = await Blog.findById(blogId); // Find the blog by ID
 
         if (!blog) {
             return res.status(404).json({ message: "Blog not found" });
         }
 
-        // Return all comments associated with the blog
+        
         res.status(200).json(blog.comments);
     } catch (error) {
         console.error("Error fetching comments:", error);
@@ -24,7 +24,7 @@ const postComment = async (req, res) => {
         const { blogId } = req.params; // Get blogId from URL params
         const { comment, user } = req.body; // Get comment and user data from request body
 
-        const blog = await Blog.findById(blogId); // Find the blog by ID
+        const blog = await Blog.findById(blogId); 
         if (!blog) {
             return res.status(404).json({ message: "Blog not found" });
         }
@@ -39,7 +39,7 @@ const postComment = async (req, res) => {
 
         // Add the new comment to the blog's comments array
         blog.comments.push(newComment);
-        await blog.save(); // Save the updated blog document
+        await blog.save();
 
         res.status(201).json(newComment); // Respond with the new comment
     } catch (error) {
@@ -51,8 +51,8 @@ const postComment = async (req, res) => {
 // Like a specific comment
 const likeComment = async (req, res) => {
     try {
-        const { blogId, commentId } = req.params; // Get blogId and commentId from URL params
-        const blog = await Blog.findById(blogId); // Find the blog by ID
+        const { blogId, commentId } = req.params;
+        const blog = await Blog.findById(blogId);
         if (!blog) {
             return res.status(404).json({ message: "Blog not found" });
         }
@@ -65,7 +65,7 @@ const likeComment = async (req, res) => {
 
         // Increment the like count
         comment.likes += 1;
-        await blog.save(); // Save the updated blog document
+        await blog.save();
 
         // Return the updated likes count in the response
         res.status(200).json({ likes: comment.likes });
@@ -79,9 +79,9 @@ const likeComment = async (req, res) => {
 // Delete a specific comment
 const deleteComment = async (req, res) => {
     try {
-        const { blogId, commentId } = req.params; // Get blogId and commentId from URL params
+        const { blogId, commentId } = req.params; 
 
-        const blog = await Blog.findById(blogId); // Find the blog by ID
+        const blog = await Blog.findById(blogId);
         if (!blog) {
             return res.status(404).json({ message: "Blog not found" });
         }
@@ -93,7 +93,7 @@ const deleteComment = async (req, res) => {
         }
 
         blog.comments.splice(commentIndex, 1); // Remove the comment
-        await blog.save(); // Save the updated blog document
+        await blog.save(); 
 
         res.status(200).json({ message: "Comment deleted successfully" });
     } catch (error) {

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import BlogCard from "../components/BlogCard";
+import { ChevronLeft } from "lucide-react";
 
 const CategoryBlogs = () => {
   const location = useLocation();
@@ -32,6 +33,13 @@ const CategoryBlogs = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white py-16 px-6">
       <div className="max-w-6xl mx-auto">
+         {/* Back Button */}
+         <Link
+            to="/"
+            className="absolute top-6 left-6 bg-gray-200 text-blue-400 px-4 py-2 rounded-lg hover:bg-gray-900 transition flex items-center shadow-lg"
+          >
+            <ChevronLeft /> <span className="ml-1">Back</span>
+          </Link>
         <h1 className="text-4xl font-extrabold text-center text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text mb-10">
           Exploring {category}: Curated Reads for You
         </h1>

@@ -1,10 +1,8 @@
-import { Heart, Eye, ArrowLeft, ArrowRight } from "lucide-react";
+import { Heart, Eye, MessageSquareMore } from "lucide-react";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BlogCard = ({ Id, blog }) => {
-  const navigate = useNavigate(); // Hook to navigate back
-
   return (
     <div className="relative bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition-transform duration-400 hover:scale-105">
       {/* Blog Image */}
@@ -26,22 +24,47 @@ const BlogCard = ({ Id, blog }) => {
         </div>
 
         {/* Views & Likes */}
-        <div className="flex items-center justify-between mt-3 text-gray-600">
+        <div className="flex items-center justify-between p-1 mt-3 text-gray-600">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
               <Eye /> {blog.views || 0}
             </span>
+           
+            <span className="flex items-center gap-1">
+            <MessageSquareMore /> {blog.comments?.length || 0}
+            </span>
             <button className="flex items-center space-x-1">
               <Heart fill="red" className="text-red-500 fill-red-500" />
-              <span>{blog.likeCount || 0} Likes</span>
+              <span>{blog.likeCount || 0} </span>
             </button>
           </div>
 
           {/* Read More Button */}
-          <Link to={`/blogs/read-blog/${Id}`} className="text-blue-600 flex font-semibold hover:underline">
+          <Link
+            to={`/blogs/read-blog/${Id}`}
+            className="text-blue-600 flex font-semibold hover:underline"
+          >
             Read More
-          </Link>          
+          </Link>
         </div>
+
+        {/* Tags Section */}
+        {blog.tags?.length > 0 && (
+          <div className="mt-3 flex items-center justify-center flex-wrap gap-2">
+            {blog.tags
+              .join(",") // Convert array to string (if it's not already)
+              .split(",") // Split comma-separated values
+              .slice(0, 2) // Limit to 2 tags
+              .map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-200 text-black text-xs font-semibold px-3 py-1 rounded-full"
+                >
+                  #{tag.trim()}
+                </span>
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );

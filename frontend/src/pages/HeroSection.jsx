@@ -49,7 +49,7 @@ const HeroSection = () => {
             </p>
             <Link to="/all">
               <button className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300 transform hover:scale-105">
-                Start Reading Blogs
+                Click here to Start Reading Blogs
               </button>
             </Link>
           </div>

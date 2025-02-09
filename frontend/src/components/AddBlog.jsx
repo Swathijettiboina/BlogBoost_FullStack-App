@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link,  useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import axios from 'axios';
 
@@ -21,10 +21,11 @@ function AddBlog() {
     });
 
     const categories = [
-        "Technology", "Health", "Finance", "Education",  
-        "Lifestyle", "Entertainment", "Business", "Science",  
+        "Technology", "Health", "Finance", "Education",
+        "Lifestyle", "Entertainment", "Business", "Science",
         "Travel", "Food"
     ];    
+
     const handleChange = (e) => {
         setBlog({ ...blog, [e.target.id]: e.target.value });
     };
@@ -41,35 +42,43 @@ function AddBlog() {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-            <Link to='/' className="absolute top-4 left-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
-                <div className="flex">
-                    <ChevronLeft /> <span>Back</span>
-                </div>
-            </Link>
-
-            <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
-                <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">Add New Blog</h2>
+        <div
+            className="flex justify-center items-center min-h-screen bg-cover bg-center p-4 relative"
+            style={{
+                backgroundImage: "url('https://source.unsplash.com/1600x900/?blog,writing')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed",
+            }}
+        >
+            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div className="relative w-full max-w-4xl bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 p-8 rounded-lg shadow-lg text-gray-100">
+                <Link to='/' className="absolute top-4 left-4 bg-gray-800 text-blue-200 px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+                    <div className="flex items-center">
+                        <ChevronLeft /> <span className="ml-2">Back</span>
+                    </div>
+                </Link>
+                <h2 className="text-4xl font-extrabold text-center mb-6 text-white">Add New Blog</h2>
                 <div className="grid grid-cols-2 gap-6">
                     <div>
-                        <label htmlFor="title" className="block text-lg font-medium text-gray-700">Title</label>
-                        <input type="text" id="title" value={blog.title} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter title" />
+                        <label htmlFor="title" className="block text-lg font-semibold text-blu-300">Title</label>
+                        <input type="text" id="title" value={blog.title} onChange={handleChange} className="w-full p-3 border border-gray-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Enter title" />
                     </div>
                     <div>
-                        <label htmlFor="author" className="block text-lg font-medium text-gray-700">Author</label>
-                        <input type="text" id="author" value={blog.author} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter author name" />
+                        <label htmlFor="author" className="block text-lg font-semibold text-gray-300">Author</label>
+                        <input type="text" id="author" value={blog.author} onChange={handleChange} className="w-full p-3 border border-gray-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Enter author name" />
                     </div>
                     <div className="col-span-2">
-                        <label htmlFor="description" className="block text-lg font-medium text-gray-700">Description</label>
-                        <textarea id="description" value={blog.description} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter description"></textarea>
+                        <label htmlFor="description" className="block text-lg font-semibold text-gray-300">Description</label>
+                        <textarea id="description" value={blog.description} onChange={handleChange} className="w-full p-3 border border-gray-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Enter description"></textarea>
                     </div>
                     <div>
-                        <label htmlFor="imageurl" className="block text-lg font-medium text-gray-700">Image URL</label>
-                        <input type="text" id="imageurl" value={blog.imageurl} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter image URL" />
+                        <label htmlFor="imageurl" className="block text-lg font-semibold text-gray-300">Image URL</label>
+                        <input type="text" id="imageurl" value={blog.imageurl} onChange={handleChange} className="w-full p-3 border border-gray-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Enter image URL" />
                     </div>
                     <div>
-                        <label htmlFor="category" className="block text-lg font-medium text-gray-700">Category</label>
-                        <select id="category" value={blog.category} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <label htmlFor="category" className="block text-lg font-semibold text-gray-300">Category</label>
+                        <select id="category" value={blog.category} onChange={handleChange} className="w-full p-3 border border-gray-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-400">
                             <option value="">Select a category</option>
                             {categories.map((category) => (
                                 <option key={category} value={category}>{category}</option>
@@ -77,15 +86,15 @@ function AddBlog() {
                         </select>
                     </div>
                     <div className="col-span-2">
-                        <label htmlFor="content" className="block text-lg font-medium text-gray-700">Content</label>
-                        <textarea id="content" value={blog.content} onChange={handleChange} className="w-full p-3 h-40 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter content"></textarea>
+                        <label htmlFor="content" className="block text-lg font-semibold text-gray-300">Content</label>
+                        <textarea id="content" value={blog.content} onChange={handleChange} className="w-full p-3 h-40 border border-gray-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Enter content"></textarea>
                     </div>
                     <div className="col-span-2">
-                        <label htmlFor="tags" className="block text-lg font-medium text-gray-700">Tags</label>
-                        <input type="text" id="tags" value={blog.tags} onChange={handleChange} className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter tags (comma separated)" />
+                        <label htmlFor="tags" className="block text-lg font-semibold text-gray-300">Tags</label>
+                        <input type="text" id="tags" value={blog.tags} onChange={handleChange} className="w-full p-3 border border-gray-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Enter tags (comma separated)" />
                     </div>
                     <div className="col-span-2">
-                        <button onClick={addBlog} className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Submit</button>
+                        <button onClick={addBlog} className="w-full bg-pink-100 text-black py-3 rounded-lg font-semibold hover:bg-pink-600 transition duration-300">Submit</button>
                     </div>
                 </div>
             </div>

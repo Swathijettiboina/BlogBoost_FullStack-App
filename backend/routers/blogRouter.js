@@ -11,7 +11,7 @@ router.get('/typeblogs', blogController.getBlogsByType);
 // catogory blogs
 router.get('/categoryblogs',blogController.getBlogsByCategory);
 
-// Get all blogs (without filters)
+// Get all blogs 
 router.get('/all', blogController.getAllBlogs);
 
 // Get a single blog by ID

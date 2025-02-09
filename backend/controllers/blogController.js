@@ -106,7 +106,7 @@ const getBlogsByCategory = async (req, res) => {
             query.category = { $regex: new RegExp(category, "i") }; // Case-insensitive category filter
         }
 
-        console.log("Query being used:", query); // Debugging output
+        // console.log("Query being used:", query); // Debugging output
 
         const blogs = await blogModel.find(query);
 
@@ -127,15 +127,15 @@ const getBlogsByType = async (req, res) => {
         const { type } = req.query;
         let query = {};
 
-        console.log("Query being used:", query); // Debugging output
+        // console.log("Query being used:", query); // Debugging output
 
         let blogs;
         if (type === "featured") {
-            blogs = await blogModel.find(query).sort({ likeCount: -1, views: -1 }).limit(3); // Featured blogs sorted by likeCount and views
+            blogs = await blogModel.find(query).sort({ likeCount: -1, views: -1 }).limit(4); // Featured blogs sorted by likeCount and views
         } else if (type === "latest") {
             blogs = await blogModel.find(query).sort({ publishDate: -1 }).limit(3); // Latest blogs sorted by publishDate
         } else {
-            blogs = await blogModel.find(query); // Default: Return all blogs if type is not "featured" or "latest"
+            blogs = await blogModel.find(null); // Default: Return all blogs if type is not "featured" or "latest"
         }
 
         if (blogs.length === 0) {

@@ -29,11 +29,12 @@ const FeaturedBlogs = () => {
 
       {featuredBlogs.length > 0 ? (
         <div className="relative w-full overflow-hidden">
-          <div className="flex space-x-4 animate-scroll-continuous">
+          <div className="flex gap-x-6 flex-nowrap w-auto animate-scroll-continuous">
             {scrollingBlogs.map((blog, index) => (
-              <div key={index} className="w-[250px] flex-shrink-0">
-                <BlogCard Id={blog._id} blog={blog} />
-              </div>
+              <div key={index} className="w-[320px] mx-auto h-[500px]">
+              <BlogCard Id={blog._id} blog={blog} />
+            </div>
+            
             ))}
           </div>
         </div>
