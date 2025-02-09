@@ -1,4 +1,4 @@
-# Blog Application
+# BlogBoost Application
 
 Blog Application is a dynamic and interactive blogging platform where users can create, read, update, and delete blog posts. It provides an engaging experience with real-time updates for likes and comments.
 
@@ -13,7 +13,7 @@ Blog Application is a dynamic and interactive blogging platform where users can 
 - **Fast Performance**: Built with Vite for a quick development experience.
 
 ## Technologies Used
-- **Frontend**: React, Vite, Tailwind CSS
+- **Frontend**: React, Tailwind CSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **State Management**: React hooks
@@ -26,7 +26,7 @@ Follow these steps to set up the project:
 ### Backend Setup
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/blog-app.git
+    git clone https://github.com/Swathijettiboina/BlogBoost_FullStack-App.git
     ```
 2. Navigate to the backend directory:
     ```bash
@@ -69,55 +69,12 @@ Follow these steps to set up the project:
 - **Update**: Edit existing blog posts.
 - **Delete**: Remove unwanted blog posts.
 
+
 ## Folder Structure for backend 
 
-├── config
-│   ├── db.js
-├── controllers
-│   ├── blogController.js
-│   ├── commentController.js
-├── models
-│   ├── blog.js
-├── routers
-│   ├── blogRouter.js
-├── .env
-├── package-lock.json
-├── package.json
-├── server.js
+backend ├── config │ ├── db.js ├── controllers │ ├── blogController.js │ ├── commentController.js ├── models │ ├── blog.js ├── routers │ ├── blogRouter.js ├── .env ├── package-lock.json ├── package.json ├── server.js
 ## Folder Structure for frontend 
-
-├── public
-├── src
-│   ├── assets
-│   │   ├── logo-blog-boost.webp
-│   ├── components
-│   │   ├── AddBlog.jsx
-│   │   ├── BlogCard.jsx
-│   │   ├── BlogsList.jsx
-│   │   ├── CommentSection.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── Home.jsx
-│   │   ├── ReadFullBlog.jsx
-│   ├── pages
-│   │   ├── About.jsx
-│   │   ├── CategoryBlogs.jsx
-│   │   ├── EditBlog.jsx
-│   │   ├── FeaturedBlogs.jsx
-│   │   ├── HeroSection.jsx
-│   │   ├── Profile.jsx
-│   │   ├── RecentBlogs.jsx
-│   ├── App.jsx
-│   ├── index.css
-│   ├── main.jsx
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── output.txt
-├── package-lock.json
-├── package.json
-├── README.md
-├── vite.config.js
+frontend ├── public ├── src │ ├── assets │ │ ├── logo-blog-boost.webp │ ├── components │ │ ├── AddBlog.jsx │ │ ├── BlogCard.jsx │ │ ├── BlogsList.jsx │ │ ├── CommentSection.jsx │ │ ├── Footer.jsx │ │ ├── Header.jsx │ │ ├── Home.jsx │ │ ├── ReadFullBlog.jsx │ ├── pages │ │ ├── About.jsx │ │ ├── CategoryBlogs.jsx │ │ ├── EditBlog.jsx │ │ ├── FeaturedBlogs.jsx │ │ ├── HeroSection.jsx │ │ ├── Profile.jsx │ │ ├── RecentBlogs.jsx │ ├── App.jsx │ ├── index.css │ ├── main.jsx ├── .gitignore ├── eslint.config.js ├── index.html ├── output.txt ├── package-lock.json ├── package.json ├── README.md ├── vite.config.js
 
 ## Contribution
 Contributions are welcome! To contribute:
