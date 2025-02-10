@@ -1,6 +1,7 @@
 import { Repeat } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
+import Media from "../assets/Media.jpg";
 
 const categories = [
   "Technology", "Health", "Finance", "Education",
@@ -13,8 +14,7 @@ const HeroSection = () => {
     <div
       className="bg-cover bg-center min-h-screen text-white"
       style={{
-        backgroundImage: "url('https://t4.ftcdn.net/jpg/08/48/33/53/360_F_848335388_jD5aySbYZE78I6NNEmjPSk7QKqIkAMT5.jpg')",
-        // backgroundRepeat:"repeat"
+        backgroundImage: `url(${Media})`
       }}
     >
       {/* Overlay for better text readability */}

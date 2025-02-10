@@ -24,7 +24,7 @@ const FeaturedBlogs = () => {
   return (
     <section className="py-10 px-6 overflow-hidden">
       <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text tracking-wide">
-        Great minds read alike! Here are the top 5 must-read blogs.
+        Great minds read alike! Here are the top 4 must-read blogs
       </h2>
 
       {featuredBlogs.length > 0 ? (

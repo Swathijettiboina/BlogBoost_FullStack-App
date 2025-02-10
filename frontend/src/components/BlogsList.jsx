@@ -26,22 +26,18 @@ const BlogsList = () => {
         backgroundImage: "url('https://t4.ftcdn.net/jpg/08/48/33/53/360_F_848335388_jD5aySbYZE78I6NNEmjPSk7QKqIkAMT5.jpg')",
       }}
     >
-      {/* Dark Overlay for Readability */}
       <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
 
-      {/* Content Wrapper */}
       <div className="relative z-10 w-full px-6 py-12">
         <div className="max-w-6xl mx-auto relative">
 
-          {/* Back Button */}
           <Link
             to="/"
-            className="absolute top-6 left-6 bg-gray-200 text-blue-400 px-4 py-2 rounded-lg hover:bg-gray-900 transition flex items-center shadow-lg"
+            className="absolute top-6 left-6 bg-gray-200 text-blue-400 px-4 py-2 rounded-lg hover:bg-gray-400 transition flex items-center shadow-lg"
           >
             <ChevronLeft /> <span className="ml-1">Back</span>
           </Link>
 
-          {/* Add Blog Button */}
           <Link
             to="/addblog"
             className="absolute top-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-lg"

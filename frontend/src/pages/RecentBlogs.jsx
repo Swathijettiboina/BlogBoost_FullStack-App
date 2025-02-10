@@ -26,7 +26,7 @@ const RecentBlogs = () => {
       
 
       <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-green-900 via-teal-600 to-blue-700 text-transparent bg-clip-text tracking-wide">
-  Fresh off the press! Explore the latest blogs just for you.
+  Fresh off the press! Explore the latest blogs just for you
 </h2>
 
       {featuredBlogs.length > 0 ? (
