@@ -131,9 +131,9 @@ const getBlogsByType = async (req, res) => {
 
         let blogs;
         if (type === "featured") {
-            blogs = await blogModel.find(query).sort({ likeCount: -1, views: -1 }).limit(4); // Featured blogs sorted by likeCount and views
+            blogs = await blogModel.find().sort({ likeCount: -1, views: -1 }).limit(4); // Featured blogs sorted by likeCount and views
         } else if (type === "latest") {
-            blogs = await blogModel.find(query).sort({ publishDate: -1 }).limit(3); // Latest blogs sorted by publishDate
+            blogs = await blogModel.find().sort({ publishDate: -1 }).limit(3); // Latest blogs sorted by publishDate
         } else {
             blogs = await blogModel.find(null); // Default: Return all blogs if type is not "featured" or "latest"
         }

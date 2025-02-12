@@ -7,7 +7,6 @@ const router = express.Router();
 // Get blogs by type (featured/latest)
 router.get('/typeblogs', blogController.getBlogsByType);
 
-
 // catogory blogs
 router.get('/categoryblogs',blogController.getBlogsByCategory);
 
