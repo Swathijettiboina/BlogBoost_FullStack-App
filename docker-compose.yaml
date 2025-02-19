@@ -1,0 +1,34 @@
+version: '3.0'
+
+services:
+  frontend:
+    image: frontend:latest
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+  backend:
+    image: backend:latest
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - MONGO_URI="mongodb+srv://swathij:3p7XcdIFx8jHhKwZ@cluster0.tbcst.mongodb.net/test?retryWrites=true&w=majority"
+      - PORT=5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    image: mongo:latest
+    restart: always
+    environment:
+      - MONGO_URI="mongodb+srv://swathij:3p7XcdIFx8jHhKwZ@cluster0.tbcst.mongodb.net/test?retryWrites=true&w=majority"
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017" 
